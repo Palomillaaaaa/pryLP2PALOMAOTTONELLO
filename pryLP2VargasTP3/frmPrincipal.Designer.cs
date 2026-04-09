@@ -47,6 +47,7 @@
             this.colUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDeuda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLimite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDeudores = new System.Windows.Forms.Button();
             this.gpbDatos.SuspendLayout();
             this.gpbConsultaDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
@@ -70,6 +71,7 @@
             this.gpbDatos.TabIndex = 0;
             this.gpbDatos.TabStop = false;
             this.gpbDatos.Text = "Carga de datos";
+            this.gpbDatos.Enter += new System.EventHandler(this.gpbDatos_Enter);
             // 
             // btnCargar
             // 
@@ -152,6 +154,7 @@
             // 
             // gpbConsultaDatos
             // 
+            this.gpbConsultaDatos.Controls.Add(this.btnDeudores);
             this.gpbConsultaDatos.Controls.Add(this.btnListar);
             this.gpbConsultaDatos.Controls.Add(this.lblTotalDeuda);
             this.gpbConsultaDatos.Controls.Add(this.lblDeuda2);
@@ -163,10 +166,11 @@
             this.gpbConsultaDatos.TabIndex = 1;
             this.gpbConsultaDatos.TabStop = false;
             this.gpbConsultaDatos.Text = "Consulta de datos";
+            this.gpbConsultaDatos.Enter += new System.EventHandler(this.gpbConsultaDatos_Enter);
             // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(369, 347);
+            this.btnListar.Location = new System.Drawing.Point(274, 347);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(85, 24);
             this.btnListar.TabIndex = 4;
@@ -206,26 +210,41 @@
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.Size = new System.Drawing.Size(490, 266);
             this.dgvClientes.TabIndex = 0;
+            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             // 
             // colCodigo
             // 
             this.colCodigo.HeaderText = "Código";
             this.colCodigo.Name = "colCodigo";
+            this.colCodigo.ReadOnly = true;
             // 
             // colUsuario
             // 
             this.colUsuario.HeaderText = "Usuario";
             this.colUsuario.Name = "colUsuario";
+            this.colUsuario.ReadOnly = true;
             // 
             // colDeuda
             // 
             this.colDeuda.HeaderText = "Deuda";
             this.colDeuda.Name = "colDeuda";
+            this.colDeuda.ReadOnly = true;
             // 
             // colLimite
             // 
             this.colLimite.HeaderText = "Límite de crédito";
             this.colLimite.Name = "colLimite";
+            this.colLimite.ReadOnly = true;
+            // 
+            // btnDeudores
+            // 
+            this.btnDeudores.Location = new System.Drawing.Point(397, 347);
+            this.btnDeudores.Name = "btnDeudores";
+            this.btnDeudores.Size = new System.Drawing.Size(85, 24);
+            this.btnDeudores.TabIndex = 5;
+            this.btnDeudores.Text = "Deudodes";
+            this.btnDeudores.UseVisualStyleBackColor = true;
+            this.btnDeudores.Click += new System.EventHandler(this.btnDeudores_Click);
             // 
             // frmPrincipal
             // 
@@ -268,6 +287,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDeuda;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLimite;
+        private System.Windows.Forms.Button btnDeudores;
     }
 }
 
