@@ -38,5 +38,10 @@ namespace pryLP2VargasTP3
             formulario.MdiParent= this;
             formulario.Show();
         }
+
+        private void listadoDeClientesOrdenadosPorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           Form formulario = new frmListadoOrdenado();
+        }
     }
 }
