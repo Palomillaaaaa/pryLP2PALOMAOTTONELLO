@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pryLP2VargasTP3;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,8 @@ namespace pryLP2PALOMAOTTONELLO
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPrincipal());
+            Application.Run(new frmMenu());
+
         }
     }
 }

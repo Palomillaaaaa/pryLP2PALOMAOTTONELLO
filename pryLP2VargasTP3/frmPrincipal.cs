@@ -51,7 +51,8 @@ namespace pryLP2PALOMAOTTONELLO
                     IND++;
                     MessageBox.Show("Los datos se han cargado correctamente", "Datos cargados",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Limpiar();
+                     Limpiar();
+                    Listar();
                 }
                 else 
                 {
@@ -72,11 +73,9 @@ namespace pryLP2PALOMAOTTONELLO
         {
             txtCodigo.Text = "";
             txtDeuda.Text = "";
-            txtDeuda.Enabled = false;
-            txtLimite.Text = "";
-            txtLimite.Enabled = false;
+            txtLimite.Text = ""; 
             txtUsuario.Text = "";
-            txtUsuario.Enabled = false;
+            
         }
 
 
@@ -100,17 +99,8 @@ namespace pryLP2PALOMAOTTONELLO
         }
         private void btnListar_Click(object sender, EventArgs e)
         {
-            dgvClientes.Rows.Clear();
-            Decimal TotalDeuda = 0;
-            for (Int32 i = 0; i < IND; i++)
-            {
-                dgvClientes.Rows.Add(vecClientes[i].CampoCodigo,
-                    vecClientes[i].CampoUsuario,
-                    vecClientes[i].CampoDeuda,
-                    vecClientes[i].CampoLimite);
-                TotalDeuda = TotalDeuda + vecClientes[i].CampoDeuda;
-            }
-            lblTotalDeuda.Text = "$" + TotalDeuda.ToString();
+            Listar();
+           
         }
 
         private void Validar() 
@@ -174,5 +164,28 @@ namespace pryLP2PALOMAOTTONELLO
         {
 
         }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            precarga();
+            Listar();
+        }
+
+        private void Listar()
+        {
+            dgvClientes.Rows.Clear();
+            Decimal TotalDeuda = 0;
+            for (Int32 i = 0; i < IND; i++)
+            {
+                dgvClientes.Rows.Add(vecClientes[i].CampoCodigo,
+                    vecClientes[i].CampoUsuario,
+                    vecClientes[i].CampoDeuda,
+                    vecClientes[i].CampoLimite);
+                TotalDeuda = TotalDeuda + vecClientes[i].CampoDeuda;
+            }
+            lblTotalDeuda.Text = "$" + TotalDeuda.ToString();
+
+        }
     }
+
 }

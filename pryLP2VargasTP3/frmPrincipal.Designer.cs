@@ -39,6 +39,7 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.gpbConsultaDatos = new System.Windows.Forms.GroupBox();
+            this.btnDeudores = new System.Windows.Forms.Button();
             this.btnListar = new System.Windows.Forms.Button();
             this.lblTotalDeuda = new System.Windows.Forms.Label();
             this.lblDeuda2 = new System.Windows.Forms.Label();
@@ -47,7 +48,6 @@
             this.colUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDeuda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLimite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnDeudores = new System.Windows.Forms.Button();
             this.gpbDatos.SuspendLayout();
             this.gpbConsultaDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
@@ -168,6 +168,16 @@
             this.gpbConsultaDatos.Text = "Consulta de datos";
             this.gpbConsultaDatos.Enter += new System.EventHandler(this.gpbConsultaDatos_Enter);
             // 
+            // btnDeudores
+            // 
+            this.btnDeudores.Location = new System.Drawing.Point(397, 347);
+            this.btnDeudores.Name = "btnDeudores";
+            this.btnDeudores.Size = new System.Drawing.Size(85, 24);
+            this.btnDeudores.TabIndex = 5;
+            this.btnDeudores.Text = "Deudodes";
+            this.btnDeudores.UseVisualStyleBackColor = true;
+            this.btnDeudores.Click += new System.EventHandler(this.btnDeudores_Click);
+            // 
             // btnListar
             // 
             this.btnListar.Location = new System.Drawing.Point(274, 347);
@@ -236,16 +246,6 @@
             this.colLimite.Name = "colLimite";
             this.colLimite.ReadOnly = true;
             // 
-            // btnDeudores
-            // 
-            this.btnDeudores.Location = new System.Drawing.Point(397, 347);
-            this.btnDeudores.Name = "btnDeudores";
-            this.btnDeudores.Size = new System.Drawing.Size(85, 24);
-            this.btnDeudores.TabIndex = 5;
-            this.btnDeudores.Text = "Deudodes";
-            this.btnDeudores.UseVisualStyleBackColor = true;
-            this.btnDeudores.Click += new System.EventHandler(this.btnDeudores_Click);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,6 +257,7 @@
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de clientes";
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.gpbDatos.ResumeLayout(false);
             this.gpbDatos.PerformLayout();
             this.gpbConsultaDatos.ResumeLayout(false);
