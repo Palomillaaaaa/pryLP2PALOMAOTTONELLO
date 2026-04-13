@@ -92,6 +92,9 @@
             // cmbModo
             // 
             this.cmbModo.FormattingEnabled = true;
+            this.cmbModo.Items.AddRange(new object[] {
+            "Ascendente",
+            "Descente"});
             this.cmbModo.Location = new System.Drawing.Point(331, 55);
             this.cmbModo.Name = "cmbModo";
             this.cmbModo.Size = new System.Drawing.Size(121, 21);
