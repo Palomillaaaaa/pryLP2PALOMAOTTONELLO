@@ -18,7 +18,7 @@ namespace pryLP2PALOMAOTTONELLO
         }
 
         //Declaración de un registro
-        private struct RegCli
+        public struct RegCli
         {
             public Int32 CampoCodigo;
             public String CampoUsuario;
@@ -27,7 +27,7 @@ namespace pryLP2PALOMAOTTONELLO
         }
 
         //Declaración de vector
-        private RegCli[] vecClientes = new RegCli[10];
+        static public RegCli[] vecClientes = new RegCli[10];
 
         //Declaración de indice
         private Int32 IND = 0;

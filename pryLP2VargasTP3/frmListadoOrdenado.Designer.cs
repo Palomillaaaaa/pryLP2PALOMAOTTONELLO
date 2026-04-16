@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.grbConsulta = new System.Windows.Forms.GroupBox();
-            this.lblCampo = new System.Windows.Forms.Label();
-            this.lblmodo = new System.Windows.Forms.Label();
-            this.cmbCampo = new System.Windows.Forms.ComboBox();
-            this.cmbModo = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LimitedeCredito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Deuda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbModo = new System.Windows.Forms.ComboBox();
+            this.cmbCampo = new System.Windows.Forms.ComboBox();
+            this.lblmodo = new System.Windows.Forms.Label();
+            this.lblCampo = new System.Windows.Forms.Label();
             this.btnListar = new System.Windows.Forms.Button();
             this.grbConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -57,48 +57,6 @@
             this.grbConsulta.TabStop = false;
             this.grbConsulta.Text = "Consulta de datos";
             this.grbConsulta.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // lblCampo
-            // 
-            this.lblCampo.AutoSize = true;
-            this.lblCampo.Location = new System.Drawing.Point(40, 59);
-            this.lblCampo.Name = "lblCampo";
-            this.lblCampo.Size = new System.Drawing.Size(40, 13);
-            this.lblCampo.TabIndex = 0;
-            this.lblCampo.Text = "Campo";
-            // 
-            // lblmodo
-            // 
-            this.lblmodo.AutoSize = true;
-            this.lblmodo.Location = new System.Drawing.Point(267, 59);
-            this.lblmodo.Name = "lblmodo";
-            this.lblmodo.Size = new System.Drawing.Size(34, 13);
-            this.lblmodo.TabIndex = 1;
-            this.lblmodo.Text = "Modo";
-            // 
-            // cmbCampo
-            // 
-            this.cmbCampo.FormattingEnabled = true;
-            this.cmbCampo.Items.AddRange(new object[] {
-            "Código",
-            "Nombre",
-            "Límite",
-            "Deuda"});
-            this.cmbCampo.Location = new System.Drawing.Point(87, 55);
-            this.cmbCampo.Name = "cmbCampo";
-            this.cmbCampo.Size = new System.Drawing.Size(121, 21);
-            this.cmbCampo.TabIndex = 2;
-            // 
-            // cmbModo
-            // 
-            this.cmbModo.FormattingEnabled = true;
-            this.cmbModo.Items.AddRange(new object[] {
-            "Ascendente",
-            "Descente"});
-            this.cmbModo.Location = new System.Drawing.Point(331, 55);
-            this.cmbModo.Name = "cmbModo";
-            this.cmbModo.Size = new System.Drawing.Size(121, 21);
-            this.cmbModo.TabIndex = 3;
             // 
             // dataGridView1
             // 
@@ -133,14 +91,57 @@
             this.Deuda.HeaderText = "Deuda";
             this.Deuda.Name = "Deuda";
             // 
+            // cmbModo
+            // 
+            this.cmbModo.FormattingEnabled = true;
+            this.cmbModo.Items.AddRange(new object[] {
+            "Ascendente",
+            "Descente"});
+            this.cmbModo.Location = new System.Drawing.Point(331, 55);
+            this.cmbModo.Name = "cmbModo";
+            this.cmbModo.Size = new System.Drawing.Size(121, 21);
+            this.cmbModo.TabIndex = 3;
+            // 
+            // cmbCampo
+            // 
+            this.cmbCampo.FormattingEnabled = true;
+            this.cmbCampo.Items.AddRange(new object[] {
+            "Código",
+            "Nombre",
+            "Límite",
+            "Deuda"});
+            this.cmbCampo.Location = new System.Drawing.Point(87, 55);
+            this.cmbCampo.Name = "cmbCampo";
+            this.cmbCampo.Size = new System.Drawing.Size(121, 21);
+            this.cmbCampo.TabIndex = 2;
+            // 
+            // lblmodo
+            // 
+            this.lblmodo.AutoSize = true;
+            this.lblmodo.Location = new System.Drawing.Point(267, 59);
+            this.lblmodo.Name = "lblmodo";
+            this.lblmodo.Size = new System.Drawing.Size(34, 13);
+            this.lblmodo.TabIndex = 1;
+            this.lblmodo.Text = "Modo";
+            // 
+            // lblCampo
+            // 
+            this.lblCampo.AutoSize = true;
+            this.lblCampo.Location = new System.Drawing.Point(40, 59);
+            this.lblCampo.Name = "lblCampo";
+            this.lblCampo.Size = new System.Drawing.Size(40, 13);
+            this.lblCampo.TabIndex = 0;
+            this.lblCampo.Text = "Campo";
+            // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(446, 348);
+            this.btnListar.Location = new System.Drawing.Point(442, 310);
             this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(75, 23);
+            this.btnListar.Size = new System.Drawing.Size(139, 23);
             this.btnListar.TabIndex = 1;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // frmListadoOrdenado
             // 
@@ -151,6 +152,7 @@
             this.Controls.Add(this.grbConsulta);
             this.Name = "frmListadoOrdenado";
             this.Text = "frmListadoOrdenado";
+            this.Load += new System.EventHandler(this.frmListadoOrdenado_Load);
             this.grbConsulta.ResumeLayout(false);
             this.grbConsulta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
