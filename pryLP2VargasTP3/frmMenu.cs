@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pryLP2PALOMAOTTONELLO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +25,9 @@ namespace pryLP2VargasTP3
 
         private void listadoDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Form formulario = new ListarDeuda ();
+            formulario.MdiParent = this;
+            formulario.Show();
         }
 
         private void Menu_Load(object sender, EventArgs e)
@@ -34,7 +37,7 @@ namespace pryLP2VargasTP3
 
         private void agregarNuevosClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form formulario = new frmMenu();
+            Form formulario = new frmPrincipal();
             formulario.MdiParent= this;
             formulario.Show();
         }
@@ -42,6 +45,15 @@ namespace pryLP2VargasTP3
         private void listadoDeClientesOrdenadosPorToolStripMenuItem_Click(object sender, EventArgs e)
         {
            Form formulario = new frmListadoOrdenado();
+            formulario.MdiParent = this;
+            formulario.Show();
+        }
+
+        private void listadoDeTodosLosClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new ListadodeClientes();
+            formulario.MdiParent = this;
+            formulario.Show();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pryLP2VargasTP3;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,7 +53,7 @@ namespace pryLP2PALOMAOTTONELLO
                     MessageBox.Show("Los datos se han cargado correctamente", "Datos cargados",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                      Limpiar();
-                    Listar();
+                    //Listar();
                 }
                 else 
                 {
@@ -97,11 +98,11 @@ namespace pryLP2PALOMAOTTONELLO
             vecClientes[IND].CampoLimite = 300000;
             IND++;
         }
-        private void btnListar_Click(object sender, EventArgs e)
-        {
-            Listar();
+        //private void btnListar_Click(object sender, EventArgs e)
+        //{
+        //    Listar();
            
-        }
+        //}
 
         private void Validar() 
         {
@@ -146,20 +147,7 @@ namespace pryLP2PALOMAOTTONELLO
 
         }
 
-        private void btnDeudores_Click(object sender, EventArgs e)
-        {
-            Decimal total = 0;
-            dgvClientes.Rows.Clear();
-            for (int i = 0; i < IND; i++)
-            {
-                if (vecClientes[i].CampoDeuda > 0)
-                {
-                    dgvClientes.Rows.Add(vecClientes[i].CampoCodigo, vecClientes[i].CampoUsuario, vecClientes[i].CampoDeuda, vecClientes[i].CampoLimite);
-                    total = total + vecClientes[i].CampoDeuda;
-                }
-            }
-        lblTotalDeuda.Text = total.ToString();
-        }
+        
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -168,24 +156,10 @@ namespace pryLP2PALOMAOTTONELLO
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             precarga();
-            Listar();
+           // Listar();
         }
 
-        private void Listar()
-        {
-            dgvClientes.Rows.Clear();
-            Decimal TotalDeuda = 0;
-            for (Int32 i = 0; i < IND; i++)
-            {
-                dgvClientes.Rows.Add(vecClientes[i].CampoCodigo,
-                    vecClientes[i].CampoUsuario,
-                    vecClientes[i].CampoDeuda,
-                    vecClientes[i].CampoLimite);
-                TotalDeuda = TotalDeuda + vecClientes[i].CampoDeuda;
-            }
-            lblTotalDeuda.Text = "$" + TotalDeuda.ToString();
-
-        }
+        
     }
 
 }

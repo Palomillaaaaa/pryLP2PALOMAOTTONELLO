@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.grbConsulta = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvUsuario = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LimitedeCredito = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,12 +40,12 @@
             this.lblCampo = new System.Windows.Forms.Label();
             this.btnListar = new System.Windows.Forms.Button();
             this.grbConsulta.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // grbConsulta
             // 
-            this.grbConsulta.Controls.Add(this.dataGridView1);
+            this.grbConsulta.Controls.Add(this.dgvUsuario);
             this.grbConsulta.Controls.Add(this.cmbModo);
             this.grbConsulta.Controls.Add(this.cmbCampo);
             this.grbConsulta.Controls.Add(this.lblmodo);
@@ -56,20 +56,20 @@
             this.grbConsulta.TabIndex = 0;
             this.grbConsulta.TabStop = false;
             this.grbConsulta.Text = "Consulta de datos";
-            this.grbConsulta.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.grbConsulta.Enter += new System.EventHandler(this.grbConsulta_Enter);
             // 
-            // dataGridView1
+            // dgvUsuario
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
             this.Usuario,
             this.LimitedeCredito,
             this.Deuda});
-            this.dataGridView1.Location = new System.Drawing.Point(43, 102);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(451, 150);
-            this.dataGridView1.TabIndex = 4;
+            this.dgvUsuario.Location = new System.Drawing.Point(43, 102);
+            this.dgvUsuario.Name = "dgvUsuario";
+            this.dgvUsuario.Size = new System.Drawing.Size(451, 150);
+            this.dgvUsuario.TabIndex = 4;
             // 
             // Codigo
             // 
@@ -101,6 +101,7 @@
             this.cmbModo.Name = "cmbModo";
             this.cmbModo.Size = new System.Drawing.Size(121, 21);
             this.cmbModo.TabIndex = 3;
+            this.cmbModo.SelectedIndexChanged += new System.EventHandler(this.cmbModo_SelectedIndexChanged);
             // 
             // cmbCampo
             // 
@@ -114,6 +115,7 @@
             this.cmbCampo.Name = "cmbCampo";
             this.cmbCampo.Size = new System.Drawing.Size(121, 21);
             this.cmbCampo.TabIndex = 2;
+            this.cmbCampo.SelectedIndexChanged += new System.EventHandler(this.cmbCampo_SelectedIndexChanged);
             // 
             // lblmodo
             // 
@@ -147,15 +149,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(607, 360);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.grbConsulta);
             this.Name = "frmListadoOrdenado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmListadoOrdenado";
             this.Load += new System.EventHandler(this.frmListadoOrdenado_Load);
             this.grbConsulta.ResumeLayout(false);
             this.grbConsulta.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -167,7 +170,7 @@
         private System.Windows.Forms.Label lblCampo;
         private System.Windows.Forms.ComboBox cmbModo;
         private System.Windows.Forms.ComboBox cmbCampo;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn LimitedeCredito;
